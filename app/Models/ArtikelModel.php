@@ -19,4 +19,9 @@ class ArtikelModel extends Model
         return $new_artikel;
     }
 
+    public static function find_by_id($id)
+    {
+        $artikel = DB::table('artikel')->where('id', $id)->first();
+        return $artikel;
+    }
 }

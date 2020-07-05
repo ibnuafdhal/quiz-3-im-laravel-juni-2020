@@ -35,7 +35,7 @@ class ArtikelController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $artikel = Artikel::create([
             'judul'  => $request->judul,
             'isi'    => $request->isi,
@@ -43,5 +43,12 @@ class ArtikelController extends Controller
             'tag'    => $request->tag,
         ]);
         return redirect('/artikel');
+    }
+
+    public function show($id)
+    {
+        $artikel = ArtikelModel::find_by_id($id);
+        //dd(date('created_at'));
+        return view('/artikel.show', compact('artikel'));
     }
 }

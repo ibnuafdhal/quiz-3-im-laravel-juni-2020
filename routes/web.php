@@ -25,8 +25,7 @@ Route::get('/master', function () {
 Route::get('/artikel', 'ArtikelController@index'); //menampilkan table artikel
 Route::get('/artikel/create', 'ArtikelController@create');
 Route::post('/artikel', 'ArtikelController@store'); // menyimpan data
-
-
+Route::get('/artikel/{id}', 'ArtikelController@show'); // menampilkan detail 
 // Route::get('/items/create', 'ItemController@create'); // menampilkan halaman form
 // Route::post('/items', 'ItemController@store'); // menyimpan data
 // Route::get('/items', 'ItemController@index'); // menampilkan semua
